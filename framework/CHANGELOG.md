@@ -45,7 +45,7 @@ Yii Framework 2 Change Log
 - Bug #14423: Fixed `ArrayHelper::merge` behavior with null values for integer-keyed elements (dmirogin)
 - Bug #14449: Fix PHP 7.2 compatibility bugs and add explicit closure support in `yii\base\Application` (dynasource)
 - Bug #14471: `ContentNegotiator` will always set one of the configured server response formats even if the client does not accept any of them (PowerGamer1)
-- Bug #14492: Fixed error handler not escaping error info debug mode, see CVE-2017-11516 (samdark)
+- Bug #14492: Fixed error handler not escaping error info in debug mode, see CVE-2017-11516 (samdark)
 - Bug #14493: Fixed getting permissions in `yii\rbac\Dbmanger::getPermissionsByUser` by user with id equals 0 (dmirogin)
 - Bug #14523: Added `yii\web\MultipartFormDataParser::$force` option allowing to enforce parsing even on 'POST' request (klimov-paul)
 - Bug #14525: Fixed 2.0.12 regression of loading of global fixtures trough `yii fixture/load` (michaelarnauts)
@@ -97,7 +97,7 @@ Yii Framework 2 Change Log
 - Chg #14487: Changed i18n message error to warning (dmirogin)
 - Enh #14864: Ability to use dependencies in constructor of migrations (vtvz)
 - Enh #14913: Assset hashing now takes asset linking into account to improve cache busting (schmunk42)
-- Enh #15015: Added `StringHelper::floatToString()` to savely cast float values independent of the locale, also fixes some places in the framework that use it now (cebe)
+- Enh #15015: Added `StringHelper::floatToString()` to safely cast float values independent of the locale, also fixes some places in the framework that use it now (cebe)
 
 2.0.12 June 05, 2017
 --------------------
