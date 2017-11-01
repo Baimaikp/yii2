@@ -8,7 +8,6 @@
 namespace yiiunit\framework\web\session;
 
 use Yii;
-use yii\base\Security;
 use yii\db\Connection;
 use yii\db\Query;
 use yii\web\DbSession;
@@ -28,6 +27,7 @@ abstract class AbstractDbSessionTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
+
         $this->mockApplication();
         Yii::$app->set('db', $this->getDbConfig());
         $this->dropTableSession();
@@ -143,6 +143,11 @@ abstract class AbstractDbSessionTest extends TestCase
         $object->array = [null, 'ab' => 'cd'];
         $object->binary = base64_decode('5qS2UUcXWH7rjAmvhqGJTDNkYWFiOGMzNTFlMzNmMWIyMDhmOWIwYzAwYTVmOTFhM2E5MDg5YjViYzViN2RlOGZlNjllYWMxMDA0YmQxM2RQ3ZC0in5ahjNcehNB/oP/NtOWB0u3Skm67HWGwGt9MA==');
         $object->with_null_byte = 'hey!' . "\0" . 'y"ûƒ^äjw¾bðúl5êù-Ö=W¿Š±¬GP¥Œy÷&ø';
+
+        if (version_compare(PHP_VERSION, '5.5.0', '<')) {
+            unset($object->binary);
+            // Binary data can not be inserted on PHP <5.5
+        }
 
         return $object;
     }
