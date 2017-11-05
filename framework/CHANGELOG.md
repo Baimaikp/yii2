@@ -1,16 +1,16 @@
 Yii Framework 2 Change Log
 ==========================
 
-2.0.14 under development
+2.0.13.1 under development
 ------------------------
 
-- no changes in this release.
+- Bug #15081: Fixed "Undefined offset: 1" in log Target (ischenko)
 
 
 2.0.13 November 03, 2017
 ------------------------
 
-- Bug #6226: Fix fatal symlink error durint assets publishing in multi threaded environment (dynasource)
+- Bug #6226: Fix fatal symlink error during assets publishing in multi threaded environment (dynasource)
 - Bug #6526: Fixed `yii\db\Command::batchInsert()` casting of double values correctly independent of the locale (cebe, leammas)
 - Bug #6588: Fixed changing array keys after validation of multiple files in `yii\validators\FileValidator` (developeruz)
 - Bug #7890: Allow `migrate/mark` to mark history at the point of the base migration (cebe)
